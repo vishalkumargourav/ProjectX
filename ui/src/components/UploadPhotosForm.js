@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
 import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
@@ -23,6 +23,11 @@ export const UploadPhotosForm = () => {
     setselectedImage(event.target.files[0]);
     setimageUploaded(1);
   };
+
+  const uploadSelectedImage = () => {
+    console.log("Uploading Images");
+
+  }
 
   const renderInitialState = () => {
     console.log("Rendering Initial State");
@@ -70,6 +75,7 @@ export const UploadPhotosForm = () => {
             />
           </Button>
         </label>
+        <Button onClick={uploadSelectedImage}>Upload Now</Button>
       </Grid>
     );
   };
